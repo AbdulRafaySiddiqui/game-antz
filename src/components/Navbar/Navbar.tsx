@@ -4,7 +4,6 @@ import { makeStyles } from "@mui/styles";
 import Logo from "src/assets/logos/logo.png";
 import BurgerMenu from "src/components/BurgerMenu/BurgerMenu";
 import { useLocation, useNavigate } from "react-router-dom";
-import WalletIcon from "../WalletIcon/WalletIcon";
 import clsx from "clsx";
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -13,7 +12,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     justifyContent: "space-between",
     alignItems: "center",
     height: 70,
-    boxShadow: "0px 2px 2px rgba(0,0,0,0.3)",
     paddingLeft: 10,
     paddingRight: 10,
     [theme.breakpoints.down("md")]: {
@@ -76,7 +74,6 @@ const Navbar: React.FC<Props> = () => {
         ))}
       </div>
 
-      <WalletIcon />
       <div className={classes.hideMdUp}>
         <BurgerMenu links={links} />
       </div>
