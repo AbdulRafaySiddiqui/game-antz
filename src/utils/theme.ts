@@ -29,7 +29,7 @@ declare module "@mui/material/styles" {
 }
 
 const primaryColor = "#7C69E3";
-const secondaryColor = "#292845";
+const secondaryColor = "#CC0000";
 
 let theme = createTheme({
   palette: {
@@ -61,6 +61,18 @@ let theme = createTheme({
       styleOverrides: {
         root: {
           textTransform: "none",
+        },
+        outlinedSecondary: {
+          padding: "7px 30px",
+          color: "white",
+          border: "2px solid",
+          borderImageSlice: 1,
+          borderWidth: 2,
+          borderImageSource: "linear-gradient(to bottom, #CC0000, #8F1D1E)",
+          borderRadius: 10,
+          "&:hover": {
+            borderWidth: 2,
+          },
         },
       },
     },

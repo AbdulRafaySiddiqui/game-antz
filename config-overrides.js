@@ -12,6 +12,7 @@ module.exports = {
       // url: require.resolve('url'),
       // assert: require.resolve('assert'),
       buffer: require.resolve("buffer"),
+      process: false,
     };
     config.plugins.push(
       new webpack.ProvidePlugin({

@@ -15,7 +15,7 @@ const Routes: React.FC<Props> = () => {
         minHeight: "100vh",
         display: "grid",
         gridTemplateRows: "min-content 1fr min-content",
-        background: "#292845",
+        background: "#181728",
       }}
     >
       <Container maxWidth="xl">

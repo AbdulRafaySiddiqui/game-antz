@@ -50,7 +50,7 @@ const BurgerMenu: React.FC<Props> = ({ links }) => {
         anchor={"right"}
         open={state["right"]}
         onClose={toggleDrawer("right", false)}
-        PaperProps={{ style: { width: "100%", maxWidth: 300 } }}
+        PaperProps={{ style: { width: "100%", maxWidth: 300, background: "black" } }}
       >
         <List>
           {links.map(([name, path]) => (
@@ -65,7 +65,7 @@ const BurgerMenu: React.FC<Props> = ({ links }) => {
           onClick={toggleDrawer("right", true)}
           active={state.right}
           burger="slider"
-          color={theme.palette.primary.main}
+          color={theme.palette.secondary.main}
           hoverOpacity={0.8}
           scale={1.2}
         />

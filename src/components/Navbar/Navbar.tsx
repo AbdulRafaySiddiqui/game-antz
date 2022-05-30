@@ -1,5 +1,5 @@
 import React from "react";
-import { Theme, Typography } from "@mui/material";
+import { Button, Theme, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Logo from "src/assets/logos/logo.png";
 import BurgerMenu from "src/components/BurgerMenu/BurgerMenu";
@@ -8,12 +8,14 @@ import clsx from "clsx";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    display: "flex",
-    justifyContent: "space-between",
+    display: "grid",
+    gridTemplateColumns: "min-content 1fr max-content",
+    // height: 70,
     alignItems: "center",
-    height: 70,
+    justifyItems: "center",
     paddingLeft: 10,
     paddingRight: 10,
+    paddingTop: 20,
     [theme.breakpoints.down("md")]: {
       paddingRight: 25,
     },
@@ -21,7 +23,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   hideSmDown: {
     display: "flex",
     gap: 10,
-    [theme.breakpoints.down("sm")]: {
+    width: "100%",
+    justifyContent: "space-evenly",
+    [theme.breakpoints.down("md")]: {
       display: "none",
     },
   },
@@ -32,12 +36,24 @@ const useStyles = makeStyles((theme: Theme) => ({
       borderBottom: "2px black solid",
     },
   },
-  selected: {
-    borderBottom: "2px black solid",
-  },
+
   hideMdUp: {
     [theme.breakpoints.up("md")]: {
       display: "none",
+    },
+  },
+  launchBtn: {
+    [theme.breakpoints.down("lg")]: {
+      width: 120,
+      padding: "6px 2px",
+    },
+    [theme.breakpoints.down("md")]: {
+      display: "none",
+    },
+  },
+  logo: {
+    [theme.breakpoints.down("lg")]: {
+      height: "60%",
     },
   },
 }));
@@ -45,14 +61,20 @@ const useStyles = makeStyles((theme: Theme) => ({
 interface Props {}
 
 const links = [
-  ["Home", "/"],
-  ["404", "/404"],
+  ["About", "/"],
+  ["Stage", "/"],
+  ["Tokenomics", "/"],
+  ["Docs", "/"],
+  ["Roadmap", "/"],
+  ["NFTs", "/"],
+  ["Tech", "/"],
+  ["Games", "/"],
+  ["Contact", "/"],
 ];
 
 const Navbar: React.FC<Props> = () => {
   const classes = useStyles();
   const navigate = useNavigate();
-  const location = useLocation();
 
   const linkClicked = (url: string) => {
     url[0] === "/" ? navigate(url) : window.open(url, "_blank");
@@ -60,20 +82,18 @@ const Navbar: React.FC<Props> = () => {
 
   return (
     <div className={classes.root}>
-      <img height="90%" src={Logo} alt="" onClick={() => linkClicked("/")} />
+      <img height="80%" src={Logo} alt="" onClick={() => linkClicked("/")} className={classes.logo} />
 
       <div className={classes.hideSmDown}>
         {links.map(([name, link], index) => (
-          <Typography
-            key={index}
-            onClick={() => linkClicked(link)}
-            className={clsx(classes.link, location.pathname === link && classes.selected)}
-          >
+          <Typography key={index} onClick={() => linkClicked(link)} className={clsx(classes.link)}>
             {name}
           </Typography>
         ))}
       </div>
-
+      <Button variant="outlined" color="secondary" className={classes.launchBtn}>
+        Launch Dapp
+      </Button>
       <div className={classes.hideMdUp}>
         <BurgerMenu links={links} />
       </div>
