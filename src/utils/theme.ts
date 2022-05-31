@@ -76,6 +76,14 @@ let theme = createTheme({
         },
       },
     },
+    MuiAccordion: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "transparent",
+          boxShadow: "none",
+        },
+      },
+    },
   },
   fonts: ["'Raleway', sans-serif"],
 });

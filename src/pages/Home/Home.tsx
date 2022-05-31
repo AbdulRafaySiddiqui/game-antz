@@ -4,10 +4,11 @@ import { makeStyles } from "@mui/styles";
 import Head from "src/Sections/Head/Head";
 import GroupImage from "src/Sections/GroupImage/GroupImage";
 import WelcomeText from "src/Sections/WelcomeText/WelcomeText";
+import About from "src/Sections/About/About";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    height: "300vh",
+    // height: "1000vh",
   },
 }));
 
@@ -21,6 +22,7 @@ const Home: React.FC<Props> = () => {
       <Head />
       <GroupImage />
       <WelcomeText />
+      <About />
     </div>
   );
 };
