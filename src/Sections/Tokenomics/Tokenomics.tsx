@@ -8,7 +8,10 @@ import { motion } from "framer-motion";
 import useReveal from "src/hooks/useReveal";
 
 const useStyles = makeStyles((theme: Theme) => ({
-  root: {},
+  root: {
+    marginTop: 50,
+    marginBottom: 50,
+  },
   font: {
     fontFamily: theme.fonts[0],
   },

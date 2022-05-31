@@ -7,6 +7,8 @@ import WelcomeText from "src/Sections/WelcomeText/WelcomeText";
 import About from "src/Sections/About/About";
 import Trailer from "src/Sections/Trailer/Trailer";
 import Tokenomics from "src/Sections/Tokenomics/Tokenomics";
+import TokenAllocation from "src/Sections/TokenAllocation/TokenAllocation";
+import Roadmap from "src/Sections/Roadmap/Roadmap";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -27,6 +29,8 @@ const Home: React.FC<Props> = () => {
       <About />
       <Trailer />
       <Tokenomics />
+      <TokenAllocation />
+      <Roadmap />
     </div>
   );
 };

@@ -1,12 +1,20 @@
 import React from "react";
 import { useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { IntersectionOptions, useInView } from "react-intersection-observer";
 
 const item = {
   hidden: { y: 50, opacity: 0 },
   visible: {
     y: 0,
     opacity: 1,
+  },
+};
+const item2 = {
+  hidden: { y: 20, opacity: 0, scale: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    scale: 1,
   },
 };
 
@@ -22,15 +30,15 @@ const container = {
   },
 };
 
-const useReveal = function <T>() {
-  const [ref, inView] = useInView();
+const useReveal = function (options?: IntersectionOptions) {
+  const [ref, inView] = useInView(options);
   const control = useAnimation();
 
   React.useEffect(() => {
     control.start(inView ? "visible" : "hidden");
-  }, [inView]);
+  }, [inView, control]);
 
-  return { ref, inView, control, item, container };
+  return { ref, inView, control, item, container, item2 };
 };
 
 export default useReveal;

@@ -35,6 +35,7 @@ let theme = createTheme({
   palette: {
     primary: {
       main: primaryColor,
+      dark: "#181728",
     },
     secondary: {
       main: secondaryColor,
