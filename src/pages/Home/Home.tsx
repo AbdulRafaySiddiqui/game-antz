@@ -1,10 +1,12 @@
-import React, { useRef } from "react";
-import { Button, Theme, Typography } from "@mui/material";
+import React from "react";
+import { Theme } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Head from "src/Sections/Head/Head";
 import GroupImage from "src/Sections/GroupImage/GroupImage";
 import WelcomeText from "src/Sections/WelcomeText/WelcomeText";
 import About from "src/Sections/About/About";
+import Trailer from "src/Sections/Trailer/Trailer";
+import Tokenomics from "src/Sections/Tokenomics/Tokenomics";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -23,6 +25,8 @@ const Home: React.FC<Props> = () => {
       <GroupImage />
       <WelcomeText />
       <About />
+      <Trailer />
+      <Tokenomics />
     </div>
   );
 };

@@ -5,7 +5,8 @@ import AboutContainer from "./component/AboutContainer";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    marginTop: "10vh",
+    marginTop: 60,
+    marginBottom: 60,
   },
   heading: {
     fontWeight: 200,
@@ -32,7 +33,6 @@ const About: React.FC<Props> = () => {
         <Typography variant="h3" className={classes.heading2}>
           GAMEANTZ
         </Typography>
-
         <AboutContainer />
       </Container>
     </div>
