@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     background: `url(${Bg})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
+    backgroundAttachment: "fixed",
     position: "relative",
     [theme.breakpoints.down("sm")]: {
       marginTop: 20,

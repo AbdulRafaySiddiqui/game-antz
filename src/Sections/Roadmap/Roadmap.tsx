@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     position: "relative",
     backgroundColor: theme.palette.primary.dark,
     backgroundBlendMode: "color-dodge",
+    backgroundAttachment: "fixed",
   },
   grid: {
     display: "grid",

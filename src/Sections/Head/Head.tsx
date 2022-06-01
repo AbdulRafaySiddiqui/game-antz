@@ -10,6 +10,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     background: `url(${Curtain})`,
     backgroundSize: "cover",
     backgroundPositionX: "center",
+    backgroundPositionY: "60px",
+    backgroundAttachment: "fixed",
     height: "100vh",
     maxHeight: 2160,
     paddingTop: "min(30vh, 280px)",
