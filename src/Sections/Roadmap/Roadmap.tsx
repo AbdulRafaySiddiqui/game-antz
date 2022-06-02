@@ -3,18 +3,17 @@ import { makeStyles } from "@mui/styles";
 import { Container, Theme, Typography } from "@mui/material";
 import Bg from "src/assets/images/roadmapbg.png";
 import Reveal from "src/components/Reveal/Reveal";
+import NFTPrizes from "../NFTPrizes/NFTPrizes";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     paddingTop: 60,
-    paddingBottom: 60,
     background: `url(${Bg})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     position: "relative",
     backgroundColor: theme.palette.primary.dark,
     backgroundBlendMode: "color-dodge",
-    backgroundAttachment: "fixed",
   },
   grid: {
     display: "grid",
@@ -137,6 +136,7 @@ const Roadmap: React.FC<Props> = () => {
           </div>
         </div>
       </Container>
+      <NFTPrizes />
     </div>
   );
 };

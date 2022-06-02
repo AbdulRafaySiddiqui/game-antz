@@ -29,6 +29,7 @@ declare module "@mui/material/styles" {
 }
 
 const primaryColor = "#7C69E3";
+const primaryLight = "#BF76FF";
 const secondaryColor = "#CC0000";
 
 let theme = createTheme({
@@ -36,6 +37,7 @@ let theme = createTheme({
     primary: {
       main: primaryColor,
       dark: "#181728",
+      light: primaryLight,
     },
     secondary: {
       main: secondaryColor,
@@ -89,6 +91,8 @@ let theme = createTheme({
   fonts: ["'Raleway', sans-serif"],
 });
 
-theme = responsiveFontSizes(theme);
+theme = responsiveFontSizes(theme, {
+  factor: 5,
+});
 
 export default theme;

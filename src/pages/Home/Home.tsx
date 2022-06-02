@@ -9,6 +9,7 @@ import Trailer from "src/Sections/Trailer/Trailer";
 import Tokenomics from "src/Sections/Tokenomics/Tokenomics";
 import TokenAllocation from "src/Sections/TokenAllocation/TokenAllocation";
 import Roadmap from "src/Sections/Roadmap/Roadmap";
+import GameHighlights from "src/Sections/GameHighlights/GameHighlights";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -31,6 +32,7 @@ const Home: React.FC<Props> = () => {
       <Tokenomics />
       <TokenAllocation />
       <Roadmap />
+      <GameHighlights />
     </div>
   );
 };
