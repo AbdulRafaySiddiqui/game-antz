@@ -1,5 +1,5 @@
 import React from "react";
-import { useAnimation } from "framer-motion";
+import { useAnimation, motion, TargetAndTransition, VariantLabels } from "framer-motion";
 import { IntersectionOptions, useInView } from "react-intersection-observer";
 
 const item = {
@@ -30,6 +30,12 @@ const container = {
   },
 };
 
+const hoverimg: VariantLabels | TargetAndTransition = {
+  scale: [1, 1.05, 1.1, 1.05, 1],
+  // y: [0, -10, -30],
+  x: [0, -20, 0, 20, 0],
+};
+
 const useReveal = function (options?: IntersectionOptions) {
   const [ref, inView] = useInView(options);
   const control = useAnimation();
@@ -38,7 +44,7 @@ const useReveal = function (options?: IntersectionOptions) {
     control.start(inView ? "visible" : "hidden");
   }, [inView, control]);
 
-  return { ref, inView, control, item, container, item2 };
+  return { ref, inView, control, item, container, item2, motion, hoverimg };
 };
 
 export default useReveal;
