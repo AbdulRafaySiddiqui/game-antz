@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@mui/styles";
 import { Container, Grid, TextField, Theme, Typography, Button } from "@mui/material";
 import Suke from "src/assets/images/suke.png";
+import useReveal from "src/hooks/useReveal";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -14,6 +15,7 @@ interface Props {}
 
 const ContactForm: React.FC<Props> = () => {
   const classes = useStyles();
+  const { container, item, ref, control, motion } = useReveal();
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     console.log(e);
@@ -29,23 +31,31 @@ const ContactForm: React.FC<Props> = () => {
                 WANT TO TALK
               </Typography>
               <Typography variant="h3">GET IN TOUCH</Typography>
-              <Grid container spacing={3} style={{ marginTop: 20 }}>
-                <Grid item xs={12} sm={6}>
+              <Grid
+                component={motion.div}
+                animate={control}
+                ref={ref}
+                variants={container}
+                container
+                spacing={3}
+                style={{ marginTop: 20 }}
+              >
+                <Grid component={motion.div} variants={item} item xs={12} sm={6}>
                   <TextField fullWidth label="First Name" required variant="outlined" />
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid component={motion.div} variants={item} item xs={12} sm={6}>
                   <TextField fullWidth label="Last Name" variant="outlined" />
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid component={motion.div} variants={item} item xs={12} sm={6}>
                   <TextField fullWidth label="Email" type="email" required variant="outlined" />
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid component={motion.div} variants={item} item xs={12} sm={6}>
                   <TextField fullWidth label="Subject" required variant="outlined" />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid component={motion.div} variants={item} item xs={12}>
                   <TextField fullWidth label="Message" multiline rows={4} required variant="outlined" />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid component={motion.div} variants={item} item xs={12}>
                   <Button type="submit" variant="contained" color="primary" size="large">
                     Submit
                   </Button>
