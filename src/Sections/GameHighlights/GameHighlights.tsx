@@ -31,7 +31,7 @@ interface Props {}
 
 const GameHighlights: React.FC<Props> = () => {
   const classes = useStyles();
-  const { container, control, item, ref, motion, hoverimg } = useReveal();
+  const { container, control, item, ref, motion } = useReveal();
 
   return (
     <div className={classes.root}>
@@ -63,10 +63,22 @@ const GameHighlights: React.FC<Props> = () => {
             </Typography>
           </Grid>
           <Grid component={motion.div} variants={item} item xs={10} sm={10} md={4}>
-            <motion.img whileHover={hoverimg} transition={{ ease: "linear" }} src={CSGO} alt="" width="100%" />
+            <motion.img
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", duration: 0.2 }}
+              src={CSGO}
+              alt=""
+              width="100%"
+            />
           </Grid>
           <Grid component={motion.div} variants={item} item xs={10} sm={10} md={4}>
-            <img src={GTA5} alt="" width="100%" />
+            <motion.img
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", duration: 0.2 }}
+              src={GTA5}
+              alt=""
+              width="100%"
+            />
           </Grid>
           <Grid item xs={20} sm={20} md={2}>
             {/* <div className="fill"></div> */}
@@ -82,11 +94,23 @@ const GameHighlights: React.FC<Props> = () => {
               included in our APP you can always visit Overwolf API by clicking here.
             </Typography>
           </Grid>
-          <Grid component={motion.div} variants={item} item xs={20} sm={10} md={4}>
-            <img src={LOL} alt="" width="100%" />
+          <Grid component={motion.div} variants={item} item xs={10} sm={10} md={4}>
+            <motion.img
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", duration: 0.2 }}
+              src={LOL}
+              alt=""
+              width="100%"
+            />
           </Grid>
-          <Grid component={motion.div} variants={item} item xs={20} sm={10} md={4}>
-            <img src={Valorant} alt="" width="100%" />
+          <Grid component={motion.div} variants={item} item xs={10} sm={10} md={4}>
+            <motion.img
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", duration: 0.2 }}
+              src={Valorant}
+              alt=""
+              width="100%"
+            />
           </Grid>
         </Grid>
       </Container>

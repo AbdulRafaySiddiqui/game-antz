@@ -30,12 +30,6 @@ const container = {
   },
 };
 
-const hoverimg: VariantLabels | TargetAndTransition = {
-  scale: [1, 1.05, 1.1, 1.05, 1],
-  // y: [0, -10, -30],
-  x: [0, -20, 0, 20, 0],
-};
-
 const useReveal = function (options?: IntersectionOptions) {
   const [ref, inView] = useInView(options);
   const control = useAnimation();
@@ -44,7 +38,7 @@ const useReveal = function (options?: IntersectionOptions) {
     control.start(inView ? "visible" : "hidden");
   }, [inView, control]);
 
-  return { ref, inView, control, item, container, item2, motion, hoverimg };
+  return { ref, inView, control, item, container, item2, motion };
 };
 
 export default useReveal;
