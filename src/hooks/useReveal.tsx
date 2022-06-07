@@ -30,6 +30,23 @@ const container = {
   },
 };
 
+const slideRight = {
+  hidden: { opacity: 0, x: "-100%" },
+  visible: { opacity: 1, x: 0 },
+};
+const slideLeft = {
+  hidden: { opacity: 0, x: "100%" },
+  visible: { opacity: 1, x: 0 },
+};
+const slideTop = {
+  hidden: { opacity: 0, y: "100%" },
+  visible: { opacity: 1, y: 0 },
+};
+const slideBottom = {
+  hidden: { opacity: 0, y: "-100%" },
+  visible: { opacity: 1, y: 0 },
+};
+
 const useReveal = function (options?: IntersectionOptions) {
   const [ref, inView] = useInView(options);
   const control = useAnimation();
@@ -38,7 +55,7 @@ const useReveal = function (options?: IntersectionOptions) {
     control.start(inView ? "visible" : "hidden");
   }, [inView, control]);
 
-  return { ref, inView, control, item, container, item2, motion };
+  return { ref, inView, control, item, container, item2, motion, slideRight, slideLeft, slideTop, slideBottom };
 };
 
 export default useReveal;

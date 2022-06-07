@@ -65,6 +65,15 @@ let theme = createTheme({
         root: {
           textTransform: "none",
         },
+        containedPrimary: {
+          background: "linear-gradient(180deg, #7C69E3 0%, #46398E 100%)",
+          border: `5px solid ${primaryColor}`,
+          borderRadius: 10,
+          padding: "7px 40px",
+        },
+        sizeLarge: {
+          minWidth: 200,
+        },
         outlinedSecondary: {
           padding: "7px 30px",
           color: "white",
@@ -84,6 +93,27 @@ let theme = createTheme({
         root: {
           backgroundColor: "transparent",
           boxShadow: "none",
+        },
+      },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          color: "white",
+          "& fieldset": {
+            borderColor: "white !important",
+            borderRadius: 8,
+          },
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          color: "white",
+        },
+        asterisk: {
+          color: primaryColor,
         },
       },
     },

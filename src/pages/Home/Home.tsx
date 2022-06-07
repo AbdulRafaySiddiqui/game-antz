@@ -10,6 +10,8 @@ import Tokenomics from "src/Sections/Tokenomics/Tokenomics";
 import TokenAllocation from "src/Sections/TokenAllocation/TokenAllocation";
 import Roadmap from "src/Sections/Roadmap/Roadmap";
 import GameHighlights from "src/Sections/GameHighlights/GameHighlights";
+import Documents from "src/Sections/Documents/Documents";
+import ScrollToTop from "src/components/ScrollToTop/ScrollToTop";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -33,6 +35,8 @@ const Home: React.FC<Props> = () => {
       <TokenAllocation />
       <Roadmap />
       <GameHighlights />
+      <Documents />
+      <ScrollToTop />
     </div>
   );
 };
