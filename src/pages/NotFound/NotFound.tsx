@@ -59,6 +59,12 @@ const NotFound: React.FC<Props> = () => {
       <Button variant="contained" color="primary" onClick={() => setToggle(!toggle)}>
         TOggle
       </Button>
+      <div style={{ height: "100vh" }} />
+      <motion.div
+        whileInView={{ scrollSnapAlign: "start", scale: 0.6, msScrollSnapY: "start" }}
+        style={{ height: 200, width: "100%", background: "red" }}
+      ></motion.div>
+      <div style={{ height: "100vh" }} />
     </div>
   );
 };

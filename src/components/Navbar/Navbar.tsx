@@ -85,6 +85,10 @@ const Navbar: React.FC<Props> = () => {
     url[0] === "/" ? navigate(url) : window.open(url, "_blank");
   };
 
+  const handleLaunchClick = () => {
+    window.open("https://app.gameantz.com/", "_blank");
+  };
+
   return (
     <div className={classes.root}>
       <img height="80%" src={Logo} alt="" onClick={() => linkClicked("/")} className={classes.logo} />
@@ -96,7 +100,7 @@ const Navbar: React.FC<Props> = () => {
           </Typography>
         ))}
       </div>
-      <Button variant="outlined" color="secondary" className={classes.launchBtn}>
+      <Button variant="outlined" color="secondary" className={classes.launchBtn} onClick={handleLaunchClick}>
         Launch Dapp
       </Button>
       <div className={classes.hideMdUp}>
