@@ -84,7 +84,7 @@ const Roadmap: React.FC<Props> = () => {
   const right = data.filter((_, i) => i % 2 === 1);
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="roadmap">
       <Container maxWidth="lg">
         <Typography align="center" variant="h4" className="thin">
           ROADMAP

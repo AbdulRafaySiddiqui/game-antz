@@ -34,7 +34,7 @@ const GameHighlights: React.FC<Props> = () => {
   const { container, control, item, ref, motion } = useReveal();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="games">
       <Container maxWidth="lg">
         <Typography variant="h4" className="thin" align="center">
           GAMES HIGHLIGHTS

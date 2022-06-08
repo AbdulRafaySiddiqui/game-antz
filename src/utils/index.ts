@@ -36,3 +36,14 @@ export const shapeFormData = (data: any) => {
   }
   return formData;
 };
+
+// function to scroll to element by id
+export const scrollTo = (id: string) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+};

@@ -48,7 +48,7 @@ const Trailer: React.FC<Props> = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="stage">
       <Container maxWidth="md">
         <Typography variant="h6" align="center" className={classes.para}>
           We understand some might not get the GameAntz concept in full… this is just a tiny teaser that speaks for

@@ -24,7 +24,7 @@ const Tokenomics: React.FC<Props> = () => {
   const { container, control, item, ref } = useReveal();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="tokenomics">
       <Container maxWidth="lg">
         <Grid ref={ref} animate={control} variants={container} component={motion.div} container spacing={2}>
           {/* Image */}

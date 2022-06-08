@@ -43,7 +43,7 @@ const Documents: React.FC<Props> = () => {
   const { motion, ref, control, slideRight } = useReveal();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="docs">
       <Container maxWidth="lg">
         <motion.img
           ref={ref}

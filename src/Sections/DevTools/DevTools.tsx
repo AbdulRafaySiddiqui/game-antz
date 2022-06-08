@@ -35,7 +35,7 @@ const DevTools: React.FC<Props> = () => {
   const { motion, container, ref, slideRight, slideLeft, control, slideTop, slideBottom } = useReveal();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="tech">
       <Container maxWidth="sm">
         <Typography align="center" variant="h5" className="thin">
           TECH HIGHLIGHTS

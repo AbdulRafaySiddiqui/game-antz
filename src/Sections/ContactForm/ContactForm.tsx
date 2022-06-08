@@ -22,7 +22,7 @@ const ContactForm: React.FC<Props> = () => {
   };
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="contact">
       <Container maxWidth="lg">
         <form onSubmit={handleSubmit}>
           <Grid container spacing={3}>

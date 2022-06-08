@@ -30,7 +30,7 @@ const NFTPrizes: React.FC<Props> = () => {
   const { container, control, ref, item } = useReveal();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="nfts">
       <Container maxWidth="lg">
         <Typography align="center" variant="h4" className="thin">
           IN-DAPP

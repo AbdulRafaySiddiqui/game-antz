@@ -5,6 +5,7 @@ import Logo from "src/assets/logos/logo.png";
 import BurgerMenu from "src/components/BurgerMenu/BurgerMenu";
 import { useLocation, useNavigate } from "react-router-dom";
 import clsx from "clsx";
+import { scrollTo } from "src/utils";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -61,22 +62,26 @@ const useStyles = makeStyles((theme: Theme) => ({
 interface Props {}
 
 const links = [
-  ["About", "/"],
-  ["Stage", "/"],
-  ["Tokenomics", "/"],
-  ["Docs", "/"],
-  ["Roadmap", "/"],
-  ["NFTs", "/"],
-  ["Tech", "/"],
-  ["Games", "/"],
-  ["Contact", "/"],
+  ["About", "/", "about"],
+  ["Stage", "/", "stage"],
+  ["Tokenomics", "/", "tokenomics"],
+  ["Docs", "/", "docs"],
+  ["Roadmap", "/", "roadmap"],
+  ["NFTs", "/", "nfts"],
+  ["Tech", "/", "tech"],
+  ["Games", "/", "games"],
+  ["Contact", "/", "contact"],
 ];
 
 const Navbar: React.FC<Props> = () => {
   const classes = useStyles();
   const navigate = useNavigate();
 
-  const linkClicked = (url: string) => {
+  const linkClicked = (url: string, id = "") => {
+    if (id) {
+      scrollTo(id);
+      return;
+    }
     url[0] === "/" ? navigate(url) : window.open(url, "_blank");
   };
 
@@ -85,8 +90,8 @@ const Navbar: React.FC<Props> = () => {
       <img height="80%" src={Logo} alt="" onClick={() => linkClicked("/")} className={classes.logo} />
 
       <div className={classes.hideSmDown}>
-        {links.map(([name, link], index) => (
-          <Typography key={index} onClick={() => linkClicked(link)} className={clsx(classes.link)}>
+        {links.map(([name, link, id], index) => (
+          <Typography key={index} onClick={() => linkClicked(link, id)} className={clsx(classes.link)}>
             {name}
           </Typography>
         ))}

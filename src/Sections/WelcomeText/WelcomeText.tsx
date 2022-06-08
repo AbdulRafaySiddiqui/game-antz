@@ -42,7 +42,7 @@ const WelcomeText: React.FC<Props> = () => {
   const { ref, item, control } = useReveal();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="about">
       <Typography align="center" className={classes.mainHeading} color="primary">
         Welcome
       </Typography>
