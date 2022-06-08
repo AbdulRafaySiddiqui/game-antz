@@ -9,6 +9,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Reveal from "src/components/Reveal/Reveal";
 import DevTools from "../DevTools/DevTools";
 import ContactForm from "../ContactForm/ContactForm";
+import { AUDIT_REPORT_URL, KYC_DOXX_COMPLETE_URL, WHITEPAPER_V2 } from "src/config/constants";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -68,14 +69,14 @@ const Documents: React.FC<Props> = () => {
               <Typography variant="h6" style={{ paddingTop: 10 }} className={classes.para}>
                 Take a look at our documents and download our Whitepaper
               </Typography>
-              <a className={classes.link} href="#" target={"_blank"}>
+              <a className={classes.link} href={AUDIT_REPORT_URL} target={"_blank"}>
                 <span>RateTech Audit (PinkSale Partner)</span>{" "}
                 <ArrowForwardIcon fontSize="small" className={classes.arrow} />
               </a>
-              <a className={classes.link} href="#" target={"_blank"}>
+              <a className={classes.link} href={KYC_DOXX_COMPLETE_URL} target={"_blank"}>
                 <span>Full KYC/DOXX Completed</span> <ArrowForwardIcon fontSize="small" className={classes.arrow} />
               </a>
-              <a className={classes.link} href="#" target={"_blank"}>
+              <a className={classes.link} href={WHITEPAPER_V2} target={"_blank"}>
                 <span>Project Whitepaper V2</span> <ArrowForwardIcon fontSize="small" className={classes.arrow} />
               </a>
             </Grid>

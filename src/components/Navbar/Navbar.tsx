@@ -53,6 +53,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   logo: {
+    cursor: "pointer",
     [theme.breakpoints.down("lg")]: {
       height: "60%",
     },

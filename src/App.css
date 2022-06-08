@@ -54,3 +54,9 @@ input:-internal-autofill-selected {
   border: 2px solid red;
   background-color: blanchedalmond;
 }
+
+li {
+  list-style-position: outside;
+  padding-left: 5px;
+  margin-left: 20px;
+}

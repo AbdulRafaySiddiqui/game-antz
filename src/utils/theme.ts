@@ -96,6 +96,7 @@ let theme = createTheme({
         },
       },
     },
+
     MuiOutlinedInput: {
       styleOverrides: {
         root: {
