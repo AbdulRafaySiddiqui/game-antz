@@ -1,8 +1,10 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import { Theme, List, ListItem, useTheme, Drawer, ListItemText } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Burger from "react-css-burger";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { scrollTo, sleep } from "src/utils";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {},
@@ -33,15 +35,24 @@ const BurgerMenu: React.FC<Props> = ({ links }) => {
     bottom: false,
     right: false,
   });
+  const location = useLocation();
 
   const toggleDrawer =
     (anchor: Anchor, open: boolean) => (event: React.KeyboardEvent | React.MouseEvent | undefined | {}) => {
       setState({ ...state, [anchor]: open });
     };
 
-  const handleLinkClick = async (id: string) => {
+  const handleLinkClick = async (url: string, id = "") => {
+    if (id) {
+      let ref: Element = ReactDOM.findDOMNode(document.getElementById(id)) as Element;
+      console.log(ref);
+      if (ref?.scrollIntoView) {
+        ref.scrollIntoView();
+      }
+    }
+    url[0] === "/" ? navigate(url) : window.open(url, "_blank");
+    await sleep(1000);
     toggleDrawer("right", false)(undefined);
-    id[0] === "/" ? navigate(id) : window.open(id, "_blank");
   };
 
   return (
@@ -53,8 +64,8 @@ const BurgerMenu: React.FC<Props> = ({ links }) => {
         PaperProps={{ style: { width: "100%", maxWidth: 300, background: "black" } }}
       >
         <List>
-          {links.map(([name, path]) => (
-            <ListItem button key={path} onClick={() => handleLinkClick(path)}>
+          {links.map(([name, link, id], idex) => (
+            <ListItem button key={idex} onClick={() => handleLinkClick(link, id)}>
               <ListItemText className="center" primary={name} />
             </ListItem>
           ))}
